@@ -1,0 +1,19 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <header th:fragment = "mainHeader">
+
+        <div class="logo-area">
+            <h1>세이다(Seida)</h1>
+        </div>
+
+        <form action="/search" class="main-search-form" method="get">
+            <input type="text" class="search-input" name="searchKeyword" placeholder="검색어를 입력하세요." />
+            <input type="submit" class="submit-btn" value="검색" />
+        </form>
+
+        <div class="user-action-area">
+            <a href="/user/login" class="user-login-btn">로그인</a>
+            <a href="/user/signUp" class="user-signUp-btn">회원가입</a>
+        </div>
+
+    </header>
+</html>

@@ -1,0 +1,14 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">    
+    <nav th:fragment = "mainNav">
+
+        <ul class="community-menu-list">
+            <li><a th:href="@{ /todayBest }">오늘의 BEST</a></li>
+            <li><a th:href="@{ /weekBest }">금주의 BEST</a></li>
+            <li><a th:href="@{ /monthBest }">이달의 BEST</a></li>
+            <li><a th:href="@{ /yearBest }">올해의 BEST</a></li>
+            <li><a th:href="@{ /allTop100 }">역대 TOP100</a></li>
+            <li><a th:href="@{ /allGallery }">전체 갤러리</a></li>
+        </ul>
+
+    </nav>
+</html>

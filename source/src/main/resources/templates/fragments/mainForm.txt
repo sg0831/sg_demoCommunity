@@ -1,0 +1,29 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세이다(Seida) - 세상 이야기가 다 있다!</title>
+</head>
+
+<body>
+
+    <header th:replace = "fragments/mainHeader :: mainHeader"></header>
+    <nav th:replace = "fragments/mainNav :: mainNav"></nav>
+
+
+    <main>
+
+
+
+    </main>
+
+
+
+
+
+    <footer th:replace = "fragments/mainFooter :: mainFooter"></footer>
+
+</body>
+
+</html>

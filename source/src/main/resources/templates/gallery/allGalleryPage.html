@@ -1,0 +1,54 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 갤러리 - 세이다(Seida) - 세상 이야기가 다 있다!</title>
+</head>
+
+<body>
+
+    <header th:replace="fragments/mainHeader :: mainHeader"></header>
+    <nav th:replace="fragments/mainNav :: mainNav"></nav>
+
+
+    <main>
+
+        <h2>전체 갤러리</h2>
+        <ul class="all-gallery-list" th:each="galleryItem : ${ allGalleryList }">
+            <li>
+                <a th:href="@{ /gallery(id = ${galleryItem .getId() } ) }">
+                    <div class="title-area">
+                        <h3 th:text="${ galleryItem .getName() }">야구 갤러리</h3>
+                        <p th:text="${ galleryItem .getDiscription() }">야구를 사랑하는 사람들의 모임입니다.</p>
+                    </div>
+                    <div class="members-area">
+                        <span>멤버수: </span> <span th:text="${ galleryItem .getMembers() }"></span>
+                    </div>
+                    <div class="boards-area">
+                        <span>게시판수: </span> <span th:text="${ galleryItem .getBoards() }"></span>
+                    </div>
+                    <div class="posts-area">
+                        <span>게시물수: </span> <span th:text="${ galleryItem .getPosts() }"></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="page-select-area" >
+            <a th:if="${ hasPreviousPage }" th:href="@{ /gallery/all( page=${ (currentPageNum-1)-1 } ) }" class="prev-btn" >이전</a>
+            <div class="page-select-num-area" th:each="pageNum : ${ #numbers.sequence(startPage, endPage) }" >
+                <a th:if="${ pageNum != currentPageNum }" th:href="@{ /gallery/all(page = ${ pageNum-1 }) }" th:text="${ pageNum }"></a>
+                <strong th:if="${ pageNum == currentPageNum }" th:text="${ pageNum }"></strong>
+            </div>
+            <a th:if="${ hasNextPage }" th:href="@{ /gallery/all( page=${ (currentPageNum-1)+1 } ) }" class="next-btn" >다음</a>
+        </div>
+
+    </main>
+
+
+    <footer th:replace="fragments/mainFooter :: mainFooter"></footer>
+
+</body>
+
+</html>

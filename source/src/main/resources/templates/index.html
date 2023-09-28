@@ -1,0 +1,70 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세이다(Seida) - 세상 이야기가 다 있다!</title>
+</head>
+
+<body>
+
+    <header th:replace = "fragments/mainHeader :: mainHeader"></header>
+    <nav th:replace = "fragments/mainNav :: mainNav"></nav>
+
+
+    <main>
+
+        <section class="gallery-list">
+            <h2> 인기 갤러리 </h2>
+            <ul>
+                <li>
+                    <a th:href="@{ /gallery/1 }" aria-text="야구갤러리">
+                        <h3> 야구 갤러리 </ h3>
+                        <p> 야구를 사랑하는 이들을 위한 공간입니다. </ p>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{ /gallery/2 }">
+                        <h3> 프로그래밍 갤러리 </ h3>
+                        <p> 코딩과 프로그래밍에 관한 모든 이야기를 공유하세요. </ p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="recent-activity">
+            <h2> 최근 활동 </ h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>갤러리</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>조회</th>
+                            <th>좋아요</th>
+                            <th>댓글</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>야구갤러리</td>
+                            <td>오늘 KBO 내용 정리</td>
+                            <td>키움키움</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+
+    </main>
+
+
+
+
+
+    <footer th:replace = "fragments/mainFooter :: mainFooter"></footer>
+
+</body>
+
+</html>
