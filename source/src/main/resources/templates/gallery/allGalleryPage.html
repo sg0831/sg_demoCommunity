@@ -17,7 +17,7 @@
         <h2>전체 갤러리</h2>
         <ul class="all-gallery-list" th:each="galleryItem : ${ allGalleryList }">
             <li>
-                <a th:href="@{ /gallery(id = ${galleryItem .getId() } ) }">
+                <a th:href="@{ /gallery/detail( galleryId=${galleryItem .getId()} ) }">
                     <div class="title-area">
                         <h3 th:text="${ galleryItem .getName() }">야구 갤러리</h3>
                         <p th:text="${ galleryItem .getDiscription() }">야구를 사랑하는 사람들의 모임입니다.</p>

@@ -18,7 +18,6 @@ public class TestController {
 
 	@GetMapping("/setDummyData")
 	public String setDummyData() {
-		System.out.println("============ 테스트 시작 ============");
 		communityTestService .insertTestDummyData100();
 		return "test";
 	}

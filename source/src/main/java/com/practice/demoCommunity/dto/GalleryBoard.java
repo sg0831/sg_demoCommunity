@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
-import org.springframework.data.annotation.CreatedDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +19,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "gallery_board")
+@Table(name = "gallery_board", uniqueConstraints = {
+	@UniqueConstraint(columnNames = {"from_gallery_id", "name"})
+	}) 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,7 +38,10 @@ public class GalleryBoard {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@CreatedDate
+	@Column(name = "created")
 	private LocalDateTime created;
+	
+	@Column(name = "order_num")
+	private int orderNum;
 	
 }

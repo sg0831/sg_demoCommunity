@@ -1,5 +1,8 @@
 package com.practice.demoCommunity.dto;
 
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,5 +34,8 @@ public class GalleryCommentLike {
 	@ManyToOne
 	@JoinColumn(name = "from_user_id", nullable = false)
 	private CommunityUser fromUser;
+	
+	@Column(name = "created")
+	private LocalDateTime created;
 	
 }

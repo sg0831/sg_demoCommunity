@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.practice.demoCommunity.dto.Gallery;
+import com.practice.demoCommunity.dto.GalleryBoard;
 import com.practice.demoCommunity.service.GalleryService;
 
 import lombok.RequiredArgsConstructor;
@@ -43,5 +44,17 @@ public class GalleryController {
 		model .addAttribute("hasPreviousPage", resultPage .hasPrevious() );
 		model .addAttribute("hasNextPage", resultPage .hasNext() );
 		return "gallery/allGalleryPage";
+	}
+	
+	
+	@GetMapping("/detail")
+	public String getGalleryDetailPage(@RequestParam(defaultValue = "-1") long galleryId, Model model) {
+		Gallery gallery = galleryService .getOneGalleryById(galleryId);
+		List<GalleryBoard> boardList = galleryService .getBoardListFromGallery(galleryId);
+		
+		model .addAttribute("gallery", gallery);
+		model .addAttribute("boardList", boardList);
+		
+		return "gallery/galleryDetailMain";
 	}
 }

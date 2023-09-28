@@ -1,0 +1,7 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <section th:fragment = "galleryHeader" class="gallery-header">
+        <!-- 갤러리 정보를 보여주는 부분 -->
+        <h2 th:text="${ gallery .getName() + ' - 갤러리' }">갤러리 이름</h2>
+        <p th:text="${ gallery. getDiscription() }">갤러리 설명</p>
+    </section>
+</html>

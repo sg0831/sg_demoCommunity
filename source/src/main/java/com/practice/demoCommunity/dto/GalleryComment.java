@@ -11,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,7 +39,7 @@ public class GalleryComment {
 	@JoinColumn(name = "gallery_post_id", nullable = false)
 	private GalleryPost galleryPost;
 	
-	@CreatedDate
+	@Column(name = "created")
 	private LocalDateTime created;
 	
 }

@@ -1,0 +1,12 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    
+        <section th:fragment = "galleryBoardMenu" class="board-menu">
+            <!-- 게시판 메뉴 영역 -->
+            <ul>
+                <li th:each="boardItem : ${ boardList }">
+                    <a th:href="@{ /gallery/detail/board( boardId=${ boardItem .getId() } ) }"
+                            th:text="${ boardItem .getName() }">게시판 1</a>
+                </li>
+            </ul>
+        </section>
+</html>

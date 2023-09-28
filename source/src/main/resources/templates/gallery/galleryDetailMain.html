@@ -1,0 +1,62 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${ gallery.getName() + ' 갤러리 - 세이다(Seida)' }">세이다(Seida)) - 세상 이야기가 다 있다!</title>
+</head>
+
+<body>
+
+    <header th:replace = "fragments/mainHeader :: mainHeader"></header>
+    <nav th:replace = "fragments/mainNav :: mainNav"></nav>
+
+
+    <main>
+		
+        <section th:replace = "fragments/galleryHeader :: galleryHeader"></section>
+        
+
+        <section class="gallery-main">
+
+            <section th:replace = "fragments/galleryBoardMenu :: galleryBoardMenu"></section>
+            
+            <section class="gallery-content">
+                <h2 th:text="${ gallery.getName() }"> 갤러리 이름</h2>
+                <table> 
+                    <thead> 
+                        <tr> 
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회</th>
+                            <th>좋아요</th>
+                            <th>댓글</th>
+                        </ tr > 
+                    </ thead > 
+                    <tbody>
+                        <tr >
+                            <td>1</td>
+                            <td><a href="#">게시물 제목1</a></td> 
+                            <td> 작성자 1 </td> 
+                            <td> 2023-09-28 </td> 
+                            <td> 123 </td>
+                            <td> 123 </td>
+                            <td> 123 </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </section>
+
+        </section>
+    
+    </main>
+
+
+    <footer th:replace = "fragments/mainFooter :: mainFooter"></footer>
+
+</body>
+
+</html>

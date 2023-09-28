@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +29,7 @@ public class CommunityUser {
 	@Column(name = "email", nullable = false, unique = true)
 	private String email;
 	
-	@CreatedDate
+	@Column(name = "created")
 	private LocalDateTime created;
 	
 	@Column(name = "isLogin", nullable = false)
